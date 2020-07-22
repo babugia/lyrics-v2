@@ -1,5 +1,6 @@
 import React, { useState, memo } from 'react';
 import SongList from '../song-list';
+import { Styled } from './header.styles';
 
 const Header: React.FC = () => {
   const [song, setSong] = useState('');
@@ -13,12 +14,24 @@ const Header: React.FC = () => {
     inputValue && setSong(`suggest/${inputValue}`);
   };
 
+  const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
+    event.key === 'Enter' && handleFindMusicButtonClicked();
+  };
+
   return (
-    <>
-      <input type='text' value={inputValue} onChange={handleSongChange} />
-      <button onClick={handleFindMusicButtonClicked}>Find Music</button>
+    <Styled.Container>
+      <Styled.Input
+        type='text'
+        onKeyDown={handleKeyDown}
+        value={inputValue}
+        placeholder='Search for a song or a artist'
+        onChange={handleSongChange}
+      />
+      <Styled.Button onClick={handleFindMusicButtonClicked}>
+        Find Music
+      </Styled.Button>
       {song && <SongList song={song} />}
-    </>
+    </Styled.Container>
   );
 };
 
