@@ -12,7 +12,7 @@
 body {
   font: 400 14px Roboto, sans-serif;
   background: #222831;
-  margin: 1rem;
+  color: #fff;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -24,4 +24,5 @@ textarea {
 
 button {
   cursor: pointer;
+  color: #fff;
 }

@@ -1,4 +1,5 @@
 import React, { useState, memo } from 'react';
+import { FaSearch } from 'react-icons/fa';
 import SongList from '../song-list';
 import { Styled } from './header.styles';
 
@@ -27,9 +28,13 @@ const Header: React.FC = () => {
         placeholder='Search for a song or a artist'
         onChange={handleSongChange}
       />
+
       <Styled.Button onClick={handleFindMusicButtonClicked}>
         Find Music
       </Styled.Button>
+      <Styled.SearchIcon>
+        <FaSearch onClick={handleFindMusicButtonClicked} />
+      </Styled.SearchIcon>
       {song && <SongList song={song} />}
     </Styled.Container>
   );
