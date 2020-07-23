@@ -1,12 +1,22 @@
 import styled from 'styled-components';
+import Popup from 'reactjs-popup';
 import mediaQuery from '../../shared/styles/mediaQuery';
+import { Center } from '../../shared/styles/shared.styles';
 
+// TODO check desktop style
 const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-left: auto;
   margin-right: auto;
+`;
+
+const Modal = styled(Popup)`
+  &-content {
+    height: 80%;
+    width: 70% !important;
+  }
 `;
 
 const List = styled.ul`
@@ -49,19 +59,12 @@ const Button = styled.button`
 
 const LyricsButton = styled(Button)`
   font-size: 14px;
+  max-height: 24px;
+  align-self: center;
 `;
 
 const NextAndPrevButton = styled(Button)`
   padding: 12px 16px;
-`;
-
-const Center = styled.div`
-  margin: 0;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: fit-content;
-  transform: translate(-50%, -50%);
 `;
 
 const NotFoundLabel = styled(Center)`
@@ -78,6 +81,5 @@ export const Styled = {
   LyricsButton,
   NotFoundLabel,
   Center,
+  Modal,
 };
-
-// TODO mobile styles

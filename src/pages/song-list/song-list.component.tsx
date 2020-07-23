@@ -1,12 +1,14 @@
 import React, { memo, useState, useEffect } from 'react';
-import Popup from 'reactjs-popup';
-import { FaChevronRight, FaChevronLeft, FaSpinner } from 'react-icons/fa';
+import { FaChevronRight, FaChevronLeft } from 'react-icons/fa';
 import Lyrics from '../lyrics';
 import { useFetch } from '../../hooks/useFetch';
 import { SongListProps } from './song-list.props';
 import { SongsResponseProps } from '../../shared/types/songs-response.props';
+import Loading from '../../shared/components/loading';
 import { CORS_URL } from '../../shared/constants';
 import { Styled } from './song-list.styles';
+
+// TODO try to use lazy import
 
 function applyCors(url: string) {
   const corsUrl = CORS_URL;
@@ -28,7 +30,7 @@ const SongList = (props: SongListProps) => {
   if (!data) {
     return (
       <Styled.Center>
-        <FaSpinner className='fa-spin fa-5x' />
+        <Loading />
       </Styled.Center>
     );
   }
@@ -49,14 +51,14 @@ const SongList = (props: SongListProps) => {
               <Styled.Label>
                 {artist.name} - {title}
               </Styled.Label>
-              <Popup
+              <Styled.Modal
                 trigger={<Styled.LyricsButton>Lyrics</Styled.LyricsButton>}
                 offsetY={20}
                 modal
                 closeOnDocumentClick
               >
                 <Lyrics song={title} artist={artist.name} />
-              </Popup>
+              </Styled.Modal>
             </Styled.ListItem>
           );
         })}

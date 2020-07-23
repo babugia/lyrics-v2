@@ -2,6 +2,8 @@ import React, { memo } from 'react';
 import { AxiosError } from 'axios';
 import { useFetch } from '../../hooks/useFetch';
 import { LyricsResponseProps } from '../../shared/types/lyrics-response.props';
+import Loading from '../../shared/components/loading';
+import { Styled } from './lyrics.styles';
 
 import { LyricsProps } from './lyrics.props';
 
@@ -19,10 +21,14 @@ const Lyrics = (props: LyricsProps) => {
   );
 
   return (
-    <div style={{ padding: '1rem', maxHeight: '90vh', overflowY: 'scroll' }}>
-      {!data && !error && <span>Loading...</span>}
+    <Styled.Container>
+      {!data && !error && (
+        <Styled.Center>
+          <Loading size={3} />
+        </Styled.Center>
+      )}
       {error?.response?.status === 404 && (
-        <span>{error.response.data.error}</span>
+        <Styled.ErrorLabel>{error.response.data.error}</Styled.ErrorLabel>
       )}
       {data && (
         <div>
@@ -31,7 +37,7 @@ const Lyrics = (props: LyricsProps) => {
           ))}
         </div>
       )}
-    </div>
+    </Styled.Container>
   );
 };
 
