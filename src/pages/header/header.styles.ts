@@ -34,6 +34,10 @@ const SearchIcon = styled.div`
   ${mediaQuery.phone} {
     display: initial;
   }
+
+  ${mediaQuery.tablet} {
+    display: initial;
+  }
 `;
 
 const Button = styled.button`
@@ -47,6 +51,10 @@ const Button = styled.button`
   padding: 13px 30px;
 
   ${mediaQuery.phone} {
+    display: none;
+  }
+
+  ${mediaQuery.tablet} {
     display: none;
   }
 `;

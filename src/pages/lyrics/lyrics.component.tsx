@@ -33,7 +33,9 @@ const Lyrics = (props: LyricsProps) => {
       {data && (
         <div>
           {data.lyrics.split('\n').map((text, index) => (
-            <p key={index}>{formatedLyrics(text)}</p>
+            <Styled.LyricsRow key={index}>
+              {formatedLyrics(text)}
+            </Styled.LyricsRow>
           ))}
         </div>
       )}

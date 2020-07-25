@@ -3,7 +3,6 @@ import Popup from 'reactjs-popup';
 import mediaQuery from '../../shared/styles/mediaQuery';
 import { Center } from '../../shared/styles/shared.styles';
 
-// TODO check desktop style
 const Container = styled.div`
   display: flex;
   flex-direction: column;
@@ -15,7 +14,11 @@ const Container = styled.div`
 const Modal = styled(Popup)`
   &-content {
     height: 80%;
-    width: 70% !important;
+    width: 40%;
+    max-width: 23rem;
+    ${mediaQuery.phone} {
+      width: 70% !important;
+    }
   }
 `;
 
@@ -47,7 +50,10 @@ const ButtonsContainer = styled.div<{ prev: boolean }>`
   display: flex;
   flex-direction: ${(props) => (props.prev ? 'row' : 'row-reverse')};
   justify-content: space-between;
-  width: 90%;
+  width: 60%;
+  ${mediaQuery.phone} {
+    width: 90%;
+  }
 `;
 
 const Button = styled.button`

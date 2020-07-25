@@ -16,8 +16,13 @@ const ErrorLabel = styled.span`
   font-size: 18px;
 `;
 
+const LyricsRow = styled.p`
+  text-align: center;
+`;
+
 export const Styled = {
   Container,
   Center,
+  LyricsRow,
   ErrorLabel,
 };

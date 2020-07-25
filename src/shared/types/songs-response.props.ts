@@ -13,3 +13,5 @@ declare type SongsResponse = {
 };
 
 export declare type SongsResponseProps = SongsResponse;
+
+// TODO move this and lyrics-response to respective props files? (remove them from here)
