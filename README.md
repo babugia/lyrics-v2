@@ -16,4 +16,4 @@ To finally see the app running!
 
 ### Demo
 
-![](demo/mobile.mp4)
+![Mobile Demo](demo/mobile.gif)
