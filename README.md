@@ -13,3 +13,7 @@ Runs CORS anywhere server, simplest way to use the music api in the project.
 ### `yarn start`
 
 To finally see the app running!
+
+### Demo
+
+![](demo/mobile.mp4)
