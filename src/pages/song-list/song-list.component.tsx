@@ -2,13 +2,10 @@ import React, { memo, useState, useEffect } from 'react';
 import { FaChevronRight, FaChevronLeft } from 'react-icons/fa';
 import Lyrics from '../lyrics';
 import { useFetch } from '../../hooks/useFetch';
-import { SongListProps } from './song-list.props';
-import { SongsResponseProps } from '../../shared/types/songs-response.props';
+import { SongListProps, SongsResponseProps } from './song-list.props';
 import Loading from '../../shared/components/loading';
 import { CORS_URL } from '../../shared/constants';
 import { Styled } from './song-list.styles';
-
-// TODO try to use lazy import
 
 function applyCors(url: string) {
   const corsUrl = CORS_URL;

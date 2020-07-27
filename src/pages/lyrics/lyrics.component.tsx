@@ -1,11 +1,10 @@
 import React, { memo } from 'react';
 import { AxiosError } from 'axios';
 import { useFetch } from '../../hooks/useFetch';
-import { LyricsResponseProps } from '../../shared/types/lyrics-response.props';
 import Loading from '../../shared/components/loading';
 import { Styled } from './lyrics.styles';
 
-import { LyricsProps } from './lyrics.props';
+import { LyricsProps, LyricsResponseProps } from './lyrics.props';
 
 const formatedLyrics = (text: string) => {
   if (!text) return <br />;
