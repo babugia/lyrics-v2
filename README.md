@@ -16,4 +16,10 @@ To finally see the app running!
 
 ### Demo
 
+## Mobile
+
 ![Mobile Demo](demo/mobile.gif)
+
+## Laptop
+
+![Laptop Demo](demo/laptop.gif)
