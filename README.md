@@ -14,12 +14,12 @@ Runs CORS anywhere server, simplest way to use the music api in the project.
 
 To finally see the app running!
 
-### Demo
+## Demo
 
-## Mobile
+### Mobile
 
 ![Mobile Demo](demo/mobile.gif)
 
-## Laptop
+### Laptop
 
 ![Laptop Demo](demo/laptop.gif)
